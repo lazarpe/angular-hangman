@@ -1,0 +1,20 @@
+<p>playing-field works!</p>
+<button (click)="resetGame()">Start game</button>
+<div *ngIf="gameStarted">
+  <div class="playing-field">
+    <p *ngFor="let character of guessed_right_characters">{{character}}</p>
+  </div>
+
+  <p>Guess a letter</p>
+
+  <!-- Create a button for each letter in the alphabet -->
+  <button *ngFor="let letter of alphabet" (click)="guess(letter)">
+    {{letter}}
+  </button>
+
+  <p>Wrong guesses:</p>
+  <ul *ngFor="let letter of guessed_wrong_characters">
+    <li>{{letter}}</li>
+  </ul>
+
+</div>
