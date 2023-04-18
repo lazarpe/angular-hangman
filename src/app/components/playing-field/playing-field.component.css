@@ -1,6 +1,5 @@
 .playing-field {
   padding: 30px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,25 +17,26 @@ button {
 }
 
 .letter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
+}
 
+.letter-buttons > button {
+  display: inline-block;
+}
 
 @media (max-width: 800px) {
-  width:
-
-500px
-
-;
+  .letter-buttons > button {
+    width: 500px;
+  }
 }
 
 @media (min-width: 800px) {
-  width:
-
-900px
-
-;
-}
-
+  .letter-buttons > button {
+    width: 500px;
+  }
 }
 
 .paragraph {
@@ -47,14 +47,12 @@ button {
 }
 
 .characters {
-  /* Make p elements be horizontally aligned */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .characters > p {
-  /* Make p elements be horizontally aligned */
   margin: 0 5px;
 }
 
