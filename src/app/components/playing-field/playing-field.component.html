@@ -10,17 +10,26 @@
       <div class="paragraph">
         <p>Guess a letter</p>
       </div>
+
       <div class="letter-buttons">
-        <button *ngFor="let letter of alphabet" (click)="guess(letter)" mat-raised-button color="primary">
-          {{letter}}
-        </button>
+        <div *ngFor="let letter of alphabet">
+          <button *ngIf="isLetterUsed(letter) == true" mat-raised-button disabled>
+            {{letter}}
+          </button>
+          <button *ngIf="isLetterUsed(letter) == false" (click)="guess(letter)" mat-raised-button color="primary">
+            {{letter}}
+          </button>
+        </div>
       </div>
+
       <img src="assets/hangman-images/Frame%20{{guessed_wrong_characters.length+1}}.svg"
            alt="hangman_{{guessed_wrong_characters.length}}">
-      <p *ngIf="guessed_wrong_characters.length>0"><b>Wrong guesses:</b></p>
-      <ul *ngFor="let letter of guessed_wrong_characters">
-        <li>{{letter}}</li>
-      </ul>
+      <div class="wrong-guesses">
+        <p *ngIf="guessed_wrong_characters.length>0"><b>Wrong guesses:</b></p>
+        <ul *ngFor="let letter of guessed_wrong_characters">
+          <li>{{letter}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

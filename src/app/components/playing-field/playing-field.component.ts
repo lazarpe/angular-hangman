@@ -62,4 +62,8 @@ export class PlayingFieldComponent {
       }
     }
   }
+
+  isLetterUsed(letter: string): boolean {
+    return this.guessed_right_characters.indexOf(letter) > -1 || this.guessed_wrong_characters.indexOf(letter) > -1;
+  }
 }

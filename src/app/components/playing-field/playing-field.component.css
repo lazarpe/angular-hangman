@@ -18,6 +18,8 @@ button {
 }
 
 .letter-buttons {
+  flex-direction: row;
+
 
 @media (max-width: 800px) {
   width:
