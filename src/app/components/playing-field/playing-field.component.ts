@@ -3,15 +3,15 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app-playing-field',
   templateUrl: './playing-field.component.html',
-  styleUrls: ['./playing-field.component.css']
+  styleUrls: ['./playing-field.component.css'],
 })
 export class PlayingFieldComponent {
-  dictionary: string[] = ['banana', 'mango', 'apple', 'peach'];
+  dictionary: string[] = ['BANANA', 'MANGO', 'APPLE', 'PEACH'];
   word: string = this.getRandomWord();
   letters: string[] = this.word.split('');
   gameStarted: boolean = false;
 
-  alphabet: string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   guessed_right_characters: string[] = [];
   guessed_wrong_characters: string[] = [];
 

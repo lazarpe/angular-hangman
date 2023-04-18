@@ -1,20 +1,24 @@
-<p>playing-field works!</p>
-<button (click)="resetGame()">Start game</button>
-<div *ngIf="gameStarted">
-  <div class="playing-field">
-    <p *ngFor="let character of guessed_right_characters">{{character}}</p>
+<div class="playing-field">
+  <button mat-raised-button (click)="resetGame()">New game</button>
+  <div *ngIf="gameStarted">
+    <div class="playing-field">
+      <p *ngFor="let character of guessed_right_characters">{{character}}</p>
+    </div>
+
+    <div class="paragraph">
+      <p>Guess a letter</p>
+    </div>
+    <div class="letter-buttons">
+      <button *ngFor="let letter of alphabet" (click)="guess(letter)" mat-raised-button color="primary">
+        {{letter}}
+      </button>
+    </div>
+    <img src="assets/hangman-images/Frame%20{{guessed_wrong_characters.length+1}}.svg"
+         alt="hangman_{{guessed_wrong_characters.length}}">
+
+    <p>Wrong guesses:</p>
+    <ul *ngFor="let letter of guessed_wrong_characters">
+      <li>{{letter}}</li>
+    </ul>
   </div>
-
-  <p>Guess a letter</p>
-
-  <!-- Create a button for each letter in the alphabet -->
-  <button *ngFor="let letter of alphabet" (click)="guess(letter)">
-    {{letter}}
-  </button>
-
-  <p>Wrong guesses:</p>
-  <ul *ngFor="let letter of guessed_wrong_characters">
-    <li>{{letter}}</li>
-  </ul>
-
 </div>
