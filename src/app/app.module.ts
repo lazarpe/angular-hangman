@@ -8,6 +8,7 @@ import { PlayingFieldComponent } from './components/playing-field/playing-field.
 import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import {MatButtonModule} from "@angular/material/button";
     NavbarComponent,
     PlayingFieldComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage,
-        BrowserAnimationsModule,
-        MatButtonModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDividerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -41,24 +41,24 @@ export class PlayingFieldComponent {
               this.guessed_right_characters[i] = letter;
             }
           });
-
           return letter;
         } else {
           console.log('l: ', l)
           return l;
         }
       });
-      // check if array contains '_' anymore
       if (this.guessed_right_characters.indexOf('_') === -1) {
         this.gameStarted = false;
-        alert('You won!');
+        alert('You won! The word was: ' + this.word);
       }
     } else {
+      if (this.guessed_wrong_characters.indexOf(letter) > -1) {
+        return;
+      }
       this.guessed_wrong_characters.push(letter);
-
       if (this.guessed_wrong_characters.length === 10) {
         this.gameStarted = false;
-        alert('Game over!');
+        alert('Game over! The word was: ' + this.word);
       }
     }
   }
