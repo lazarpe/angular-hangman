@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import '../../../assets/wordlist';
 
 @Component({
   selector: 'app-playing-field',
@@ -14,6 +15,8 @@ export class PlayingFieldComponent {
   alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   guessed_right_characters: string[] = [];
   guessed_wrong_characters: string[] = [];
+
+  // wordList: WordList = new WordList();
 
   getRandomWord(): string {
     return this.dictionary[Math.floor(Math.random() * this.dictionary.length)];
@@ -66,4 +69,6 @@ export class PlayingFieldComponent {
   isLetterUsed(letter: string): boolean {
     return this.guessed_right_characters.indexOf(letter) > -1 || this.guessed_wrong_characters.indexOf(letter) > -1;
   }
+
+  protected readonly Array = Array;
 }

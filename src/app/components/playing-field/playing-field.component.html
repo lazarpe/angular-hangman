@@ -1,5 +1,15 @@
 <div class="playing-field">
   <div>
+    <div class="wordlist-selection">
+      <!--   <mat-form-field>
+           <mat-label>Choose a wordlist</mat-label>
+           <mat-select [(value)]="wordLists">
+             <mat-option *ngFor="let wordlist of wordLists" [value]="wordlist">
+               {{wordlist}}
+             </mat-option>
+           </mat-select>
+         </mat-form-field>-->
+    </div>
     <div class="new-game-btn">
       <button mat-raised-button (click)="resetGame()">New game</button>
     </div>
@@ -26,9 +36,11 @@
            alt="hangman_{{guessed_wrong_characters.length}}">
       <div class="wrong-guesses">
         <p *ngIf="guessed_wrong_characters.length>0"><b>Wrong guesses:</b></p>
-        <ul *ngFor="let letter of guessed_wrong_characters">
-          <li>{{letter}}</li>
-        </ul>
+        <div class="wrong-guessed-letters">
+        <div *ngFor="let letter of guessed_wrong_characters">
+          <p>{{letter}}, </p>
+        </div>
+        </div>
       </div>
     </div>
   </div>

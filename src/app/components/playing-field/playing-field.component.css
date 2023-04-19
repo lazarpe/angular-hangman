@@ -5,6 +5,12 @@
   justify-content: center;
 }
 
+.wrong-guessed-letters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -15px;
+}
+
 button {
   margin: 5px;
 }
